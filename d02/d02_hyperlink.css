@@ -1,0 +1,23 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* class selector */
+.tieude{
+    color: maroon;
+    text-shadow: rgb(230, 159, 45) 3px 3px 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+/* id selector */
+#download{
+    font-style: italic;
+    padding-left: 2rem;
+}
+h2:hover{
+    color: blue;
+}

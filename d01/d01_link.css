@@ -1,0 +1,16 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
+    color: green;
+    text-shadow: grey 3px 3px 3px;
+}
+
+h3{
+    color:rosybrown;
+}
+p{
+    color: darkblue;
+    font-size: 13px;
+}
