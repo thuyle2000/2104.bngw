@@ -6,12 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>table</title>
+    <style>
+        .ds{
+            border: solid lightslategrey;
+        }
+        .ds td, th, caption {
+            padding: .3rem .5rem;
+        }
+        .ds caption{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: wheat;
+            font-weight: bold;
+            background-color: teal;
+        }
+
+        .ds tr:nth-child(even){
+            background-color: honeydew;
+        }
+        .ds tr:hover{
+            background-color: linen;
+        }
+        .ds td:nth-child(1){
+            text-align: center;
+        }
+        .ds td:last-child{
+            text-align: right;
+        }
+
+
+        /*design cho bang chua 4 hoa hong*/
+        .ds-rose{
+            margin-top: 2rem;
+            margin-left: 1rem;
+            width: 80%;
+            border: solid;
+        }
+
+        .ds-rose td{
+            text-align: center;
+        }
+        .ds-rose img{
+            width: 90%;
+            display: inline-block;
+        }
+        .ds-rose td:nth-child(3){
+            vertical-align: top;
+        }
+        .ds-rose td:nth-child(3) img{
+            width: 106%;
+        }
+
+    </style>
 </head>
 
 <body>
     <h2>Student List</h2>
     <hr>
-    <table border="1" width="60%">
+    <table class="ds">
         <caption>
             Batch No: T1.2104.E0
         </caption>
@@ -79,6 +130,14 @@
         </tfoot>
     </table>
 
+    <table class="ds-rose">
+        <tr>
+            <td><img src="../images/rose1.PNG" alt="rose 1"></td>
+            <td><img src="../images/rose2.PNG" alt="rose 2"></td>
+            <td><img src="../images/rose3.PNG" alt="rose 3"></td>
+            <td><img src="../images/rose4.PNG" alt="rose 4"></td>
+        </tr>
+    </table>
 </body>
 
 </html>
