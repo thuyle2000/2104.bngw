@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirm</title>
+</head>
+<body>
+    <h2>confirm() demo</h2>
+    <hr>
+    <input type="button" value="Close your Window ?" 
+        id="BTOK" >
+
+
+    <script>
+        //lap trinh cho su kien click tren button co id='BTOK'
+        document.getElementById("BTOK").onclick= function(){
+            let kq = confirm("Are u sure ?");
+
+            //neu bam nut [OK] thi kq = true
+            if(kq==true){
+                window.close(); // dong cua so trinh duyet dang hoat dong
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isNaN</title>
+</head>
+<body>
+    <h2>Demo isNaN() va eval()</h2>
+    <hr>
+    nhap so thu 1: 
+    <input type="text" name="n1" id="n1" value="10"> <br>
+    <br>
+
+    nhap so thu 2: 
+    <input type="text" name="n2" id="n2" value="20"> <br>
+    <br>
+
+    <input type="button" value="Nhan" id="BTCASIO"> <br> <br>
+
+    Ket qua:
+    <input type="text" name="kq" id="kq" readonly>
+
+    <script>
+        //lap trinh cho su kien click tren button co id="BTCASIO"
+        document.getElementById("BTCASIO").onclick = function(){
+            //lay gia tri duoc nhap trong o co id="n1"
+            let a = document.getElementById("n1").value;
+
+            //lay gia tri duoc nhap trong o co id="n2"
+            let b = document.getElementById("n2").value;
+
+            //kiem tra a va b co phai la chu so hay ko
+            if( isNaN(a) ){
+                //thong bao loi !
+                alert("n1 khong phai la so, vui long nhap lai !");
+                document.getElementById("n1").focus();
+                return;
+            }
+
+            //nhan a voi b va luu vo bien r
+            r = a*b;
+
+            //dua gia tri cua r vo o co id="kq"
+            document.getElementById("kq").value = r;
+        }
+
+    </script>
+</body>
+</html>
