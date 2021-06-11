@@ -7,7 +7,7 @@
     <title>prompt</title>
 </head>
 <body>
-    <h2>prompt() demo</h2>
+    <h2>prompt() - eval() demo</h2>
     <hr>
     <input type="button" value="casio" id="BTCASIO" >
 
@@ -15,10 +15,11 @@
 
     <script>
         document.getElementById("BTCASIO").onclick= function(){
-            let n = prompt("nhap 1 so nguyen duong","5");
+            let exp = prompt("nhap vao 1 bieu thuc","5");        
+            let kq = eval(exp);
 
             //dua 1 chuoi vo the p co id='ketqua'
-            document.getElementById("ketqua").innerHTML = `<i>So vua nhap la </i>: ${n}`;
+            document.getElementById("ketqua").innerHTML = `<i>Ket qua bieu thuc ${exp}</i>: ${kq} `;
             
         }
     </script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parseInt</title>
+</head>
+<body>
+    <h2>parseInt() demo</h2>
+    <hr>
+    <label for="">nhap so thu 1 : </label>
+    <input type="number" name="n1" id="n1" value="12"> <br> <br>
+
+    <label for="">nhap so thu 2 : </label>
+    <input type="number" name="n2" id="n2" value="10"> <br> <br>
+
+    <input type="button" value="ADD" id="BTADD"> <br> <br>
+
+    <label for="">Ket qua : </label>
+    <input type="text" name="kq" id="kq" readonly>
+
+    <script>
+        document.getElementById('BTADD').onclick=function(){
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let r = parseInt(n1) + parseInt(n2);
+            document.getElementById('kq').value = r;
+        }
+    </script>
+
+</body>
+</html>
