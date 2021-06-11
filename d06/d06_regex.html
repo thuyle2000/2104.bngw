@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regex</title>
+</head>
+<body>
+    <h2>Regular Expression Demo</h2>
+    <hr>
+    
+    <textarea name="sample" id="sample" rows="5" cols="30" >
+        Nguyen Xuan Binh 
+        Vinh Nam 
+        Huynh Phat
+        Dang Triet
+    </textarea>
+    <br><br>
+    <input type="text" name="search" id="search" value="abc"> 
+    <button name="btSEARCH" id='btSEARCH' 
+            onclick="timkiem()">Search</button>
+        
+    <p id="ketqua"></p>
+
+    <script>
+        function timkiem(){
+            //tim xem du lieu trong o sample co chua chuoi tim trong o search ?
+            sample = document.getElementById("sample").value;
+            text= document.getElementById('search').value;
+
+            //dinh nghia bieu thuc qui tac
+            re = new RegExp(text,"ig");
+
+            //thuc hien tim kiem:
+            kq = document.getElementById("ketqua");
+            if(re.test(sample)==true){
+                kq.innerHTML = "Da tim thay roi!";
+            }
+            else{
+                kq.innerHTML = "<i>Ko tim thay !</i>";
+            }
+
+        }
+
+    </script>
+</body>
+</html>

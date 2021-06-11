@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+</head>
+<body>
+    <h2>Register New Member</h2>
+    <hr>
+    <form action="d06_regex.html" onsubmit="return kiemtra()">
+        <label for="">Username</label><br>
+        <input type="text" name="username" id="username" value="khang" required> <br> <br>
+
+        <label for="">Password</label><br>
+        <input type="password" name="password" id="password" value="123" required> <br> <br>
+        
+        <label for="">Password Confirm</label> <br>
+        <input type="password" name="cpassword" id="cpassword" value="khang" required> <br> <br>
+
+        <label for="">Year of birth</label><br>
+        <input type="number" name="yob" id="yob" value="2000" required min="1900"> <br> <br>        
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+
+    <script>
+
+        function kiemtra(){
+            //kiem tra username (TU 3-10 KY TU CHU)
+            let username = document.getElementById("username").value.trim();
+            re = /^[a-z]{3,10}$/i;
+            if(re.test(username)==false){
+                alert('username ko hop le. vui long nhap lai !');
+                document.getElementById("username").focus();
+                return false;
+            }
+
+            //kiem tra pass (tu 3-15 ky tu - ngoai tru khoang trang)
+            let pass= document.getElementById("password").value.trim();
+            re = /^\S{3,15}$/;
+            if(!re.test(pass)){
+                alert("password ko hop le. vui long nhap lai !!!");
+                document.getElementById("password").focus();
+                return false;
+            }
+
+            //kiem tra password confirm co giong password ko ?
+            let pass2= document.getElementById("cpassword").value.trim(); 
+            if(pass!==pass2){
+                alert("password confirm va password khac nhau. vui long nhap lai !!!");
+                document.getElementById("cpassword").focus();
+                return false;
+            }
+
+            alert('Chuc mung, ban da dang ky thanh cong !');
+
+        }
+    </script>
+</body>
+</html>
