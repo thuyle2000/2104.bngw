@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operators</title>
+</head>
+<body>
+    <h2>Operator demo</h2>
+    <hr>
+    <button id="bnCLICK1"> ++/--</button>
+    <button id="bnCLICK2"> === </button>
+
+
+    <script>
+        document.getElementById("bnCLICK1").onclick=function(){
+            let n1 = 3;
+            let n2 = 10;
+            alert(`${n1} sau khi tang 1 don vi: ` + ++n1);
+            alert(`${n2} sau khi giam 1 don vi: ` + n2--);
+        }
+
+        document.getElementById("bnCLICK2").onclick=function(){
+            let n1 = 30;    // so nguyen
+            let n2 = '30';  // chuoi ky tu
+
+            r1 = (n1 == n2);
+            r2 = (n1 === n2); 
+
+            alert(`${n1} == '${n2}' => ket qua ${r1} `);
+            alert(`${n1} === '${n2}' => ket qua ${r2} `);
+        }
+    </script>
+</body>
+</html>
