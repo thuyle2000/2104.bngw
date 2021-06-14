@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    <h2>String Demo</h2>
+    <hr>
+    <label for="">Nhap chuoi  ky tu thu 1: </label> <br>
+    <input type="text" name="chuoi1" id="chuoi1"
+     value="Dang Ngoc Ngoc Minh Triet" > <br> <br>
+
+    <label for="">Nhap chuoi  ky tu thu 2: </label> <br>
+    <input type="text" name="chuoi2" id="chuoi2" 
+    value="ngoc" > <br> <br>
+
+    <button id="btCLICK" onclick="string_demo()">Click</button><br><br>
+
+    <textarea name="note" id="note" cols="40" rows="10" readonly></textarea>
+
+    <script>
+        function string_demo(){
+            let a = [];
+
+            let c1 = document.getElementById("chuoi1").value;
+            let c2 = document.getElementById("chuoi2").value;
+            let note = document.getElementById("note");
+
+            let s1 = new String(c1.trim());
+            
+            a.push("toUpperCase(): "+s1.toUpperCase() );
+            a.push("c1.indexOf(c2): " + s1.indexOf(c2) );
+            a.push("c1.lastIndexOf(c2): " + s1.lastIndexOf(c2) );
+            a.push("c1.search(new RegExp(c2,'ig')): " + s1.search(new RegExp(c2,'ig')) );
+            
+            a.push("s1.replace('Ngoc', 'Van'): " + s1.replace('Ngoc', 'Van' ));
+            a.push("s1.replace(/ngoc/ig,'Van'): " + s1.replace(/ngoc/ig,'Van'));
+            
+
+            //lay ten (firstname) cua sinh vien trong chuoi s1
+            //lay vi tri cua khoang trang cuoi cung
+            let i = s1.lastIndexOf(" ");
+            let ten = s1.substring(i).trim();
+            a.push("c1.substring(i): " + ten );
+
+            note.innerHTML = a.join("\n") ;
+
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

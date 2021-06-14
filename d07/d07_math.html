@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maths</title>
+</head>
+<body>
+    <h2>Maths Demo</h2>
+    <hr>
+    <label for="">input a number : </label> <br> 
+    <input type="text" name="n1" id="n1" value="123.789"> <br> <br>
+    <button id="btCLICK">Click</button> <br> <br>
+
+    <textarea name="note" id="note" cols="40" rows="10" readonly></textarea>
+
+    <script>
+        document.getElementById("btCLICK").onclick= function(){
+            let n1 = document.getElementById("n1").value;
+
+            if(isNaN(n1)){
+                alert("Vui long nhap so bat ky !");
+                document.getElementById("n1").focus();
+                return;
+            }
+
+            let n = parseFloat(n1);
+
+            let a =[];
+
+
+            a.push(" Math.floor(n) = " + Math.floor(n) );
+            a.push(" Math.ceil(n) = " + Math.ceil(n) );
+            a.push(" Math.round(n) = " + Math.round(n) );
+            a.push(" Math.random() = " + Math.random() );
+            a.push(" Math.sqrt(n) = " + Math.sqrt(n) );
+            
+            document.getElementById("note").innerHTML = a.join("\n");
+
+
+        }
+    </script>
+
+</body>
+</html>

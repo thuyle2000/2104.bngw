@@ -62,12 +62,19 @@
             let city = document.getElementById("city").value;
 
 
+            //tinh tuoi cua thanh vien
+            let oDOB = new Date(dob);
+            let today = new Date();
+            let age = today.getFullYear() - oDOB.getFullYear()
+
+
             //dua du lieu nhap vo mang s[]
             s.push('Your Information');
             s.push('================');
             s.push(`username: ${user}`);
             s.push(`password: ${password}`);
             s.push(`birthday: ${dob}`);
+            s.push(`your age: ${age}`);
             s.push(`gender: ${gender}`);
             s.push(`city/province: ${city}`);
 
