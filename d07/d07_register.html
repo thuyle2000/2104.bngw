@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+</head>
+<body>
+    <h2>Register New Member</h2>
+    <hr>
+    <form action="d07_array2.html" method="GET" name="formDK" 
+            onsubmit="return kiemtra()">
+        <div>
+            <label for="">User Name</label> <br>
+            <input type="text" name="user" id="user" required placeholder="nhap username">
+        </div>
+        <div>
+            <label for="">Password</label> <br>
+            <input type="password" name="password" id="password" required placeholder="nhap mat ma">           
+        </div>
+        <div>
+            <label for="">Birthday</label> <br>
+            <input type="date" name="dob" id="dob" required value="2000-08-19">           
+        </div>        
+        <div>
+            <label for="">Gender</label> <br>
+            <input type="radio" name="gender" id="male" checked value="male"> male 
+            <input type="radio" name="gender" id="female" value="female"> female            
+        </div>  
+        <div>
+            <label for="">City/Province</label> <br>
+            <select name="city" id="city">
+                <option value="SG">Saigon</option>
+                <option value="HN">Hanoi</option>
+                <option value="DN">Danang</option>
+                <option value="CT">Cantho</option>
+                <option value="BD">Binhduong</option>
+            </select>         
+        </div> 
+
+        <div>
+            <label for="">Summary</label> <br>
+            <textarea name="summary" id="summary" cols="30" rows="5" readonly></textarea>         
+        </div>
+
+
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+    <script>
+        function kiemtra(){
+            var s=[];
+
+            let user = document.getElementById("user").value;
+            let password = document.getElementById("password").value;
+            let dob = document.getElementById("dob").value;
+            let gender = formDK.gender.value;
+            let city = document.getElementById("city").value;
+
+
+            //dua du lieu nhap vo mang s[]
+            s.push('Your Information');
+            s.push('================');
+            s.push(`username: ${user}`);
+            s.push(`password: ${password}`);
+            s.push(`birthday: ${dob}`);
+            s.push(`gender: ${gender}`);
+            s.push(`city/province: ${city}`);
+
+            document.getElementById("summary").innerHTML = s.join("\n")
+
+            return false; // chan lai - ko cho chuyen trang submit
+        }
+    </script>
+</body>
+</html>

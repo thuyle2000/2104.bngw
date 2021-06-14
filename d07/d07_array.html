@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <h2>Array Demo</h2>
+    <hr>
+    <button id="btCLICK" onclick="fill_names()" >Click</button>
+    <button id="btCLICK2" onclick="fill_names_x()" >Click 2</button>
+    <button id="btSORT" onclick="sort_name()" >Sort</button>
+
+    <div id="students"></div>
+
+    <script>
+        //tao mang ds chua ten cua cac ban sinh vien
+        var ds =['Binh','Khang','Thinh','Thanh','Nam', 'Dat','Triet'];
+
+        function fill_names(){
+            let a = ``;
+            for (let i = 0; i < ds.length; i++) {
+                a += `${ds[i]} , `;                 
+            }
+
+            document.getElementById("students").innerHTML=a;
+        }
+
+        function fill_names_x(){
+            let a = ds.join(' - ');
+            document.getElementById("students").innerHTML=a;
+        }
+
+        function sort_name(){
+            ds.sort();
+            let a = ds.join(' - ');
+            document.getElementById("students").innerHTML=a;
+        }
+
+    </script>
+</body>
+</html>

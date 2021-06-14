@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <style>
+        #picture{
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Array Demo</h2>
+    <hr>
+    <select name="roses" id="roses">
+        <option value="0">Hoa hong do</option>
+        <option value="1">Hoa hong vang</option>
+        <option value="2">Hoa hong huong</option>
+        <option value="3">Hoa hong do soc trang</option>
+    </select>
+    <br><br>
+    <p id="name"></p>
+    <img src="../images/rose1.PNG" alt="hoa-hong" id="picture">
+
+    <script>
+        var ds=["rose1.PNG","rose2.PNG","rose3.PNG","rose4.PNG"];
+        document.getElementById('roses').onchange=function(){
+            let i = this.value;
+            let pname = `../images/${ds[i]}`;
+
+            //doi hinh cho the img, co id=[picture]
+            document.getElementById("picture").setAttribute("src",pname);           
+        }
+
+    </script>
+
+</body>
+</html>
