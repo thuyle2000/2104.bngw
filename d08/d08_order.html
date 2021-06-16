@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+    <h2>Order Information</h2>
+    <br>
+
+    <form action="" id="formOrder">
+        <div>
+            <label for="">Your name</label>
+            <input type="text" name="name" id="name" required value="xuan binh">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="email" name="email" id="email" required value="xbinh@gmail.com">
+        </div>
+
+        <div>
+            <label for="">Phone</label>
+            <input type="text" name="phone" id="phone" required value="092 345678">
+        </div>
+        <div>
+            <label for="">San Pham</label>
+            <select name="product" id="product" required>
+                <option value=""> Select one product</option>
+                <option value="15">Chocolate</option>
+                <option value="5">Coca cola</option>
+                <option value="4.5">Pepsi cola</option>
+                <option value="9">Snack potatoes</option>
+                <option value="13">Dried chicken</option>
+            </select>
+        </div>
+        <div>
+            <label for="">Price</label>
+            <input type="text" name="price" id="price" value="" readonly>
+        </div>
+
+        <div>
+            <label for="">Quantity</label>
+            <input type="number" name="qty" id="qty" value="1" min="1" required>
+        </div>
+
+
+        <div>
+            <label for="">Amount</label>
+            <input type="text" name="amount" id="amount" readonly>
+        </div>
+
+        <div>
+            <button type="submit" name="order">Order</button>
+        </div>
+
+        <div>
+            <textarea name="bill" id="bill" cols="30" rows="10" readonly></textarea>
+        </div>
+    </form>
+
+    <script>
+        //lap trinh cho su kien onchange cua combo box [product]
+        //neu user chon 1 san pham => don gia cua sp duoc fill 
+        //vo o price 
+        document.getElementById("product").onchange = function () {
+            let price = document.getElementById("product").value;
+            document.getElementById("price").value = price;
+
+            document.getElementById("amount").value = getAmount();
+        }
+
+        //laptrinh cho su kien onchange cua o [qty] de tinh lai gia
+        //tien cua order
+        document.getElementById("qty").onchange= function(){
+            document.getElementById("amount").value = getAmount();
+        }
+
+        //laptrinh cho su kien onkeyup cua o [qty] de tinh lai gia
+        //tien cua order
+        document.getElementById("qty").onkeyup= function(){
+            document.getElementById("amount").value = getAmount();
+        }
+
+        //ham tinh thanh tien cua hoa don
+        function getAmount(){
+            let price = document.getElementById("product").value;
+            let qty = document.getElementById("qty").value;
+            return price*qty;
+        }
+    
+        //lap trinh cho su kien submit cua form
+        document.getElementById("formOrder").onsubmit = function(e){
+            e.preventDefault(); // vo hieu hoa chuc nang submit
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            let p = document.getElementById("product");
+            let product = p.options[p.selectedIndex].text;
+            
+            let price = document.getElementById("price").value;
+            let qty = document.getElementById("qty").value;
+            let amount = document.getElementById("amount").value;
+
+        
+            let bill = [];
+            bill.push(" Your Order");
+            bill.push(" ================");
+            bill.push(` Name: ${name}`);
+            bill.push(` Email: ${email}`);
+            bill.push(` Phone: ${phone}`);
+            bill.push(` Product: ${product}`);
+            bill.push(` Price: ${price}`);
+            bill.push(` Quantity: ${qty}`);
+            bill.push(" ================");
+            bill.push(` Amount: ${amount}`);
+
+
+            let sBILL = bill.join("\n");
+            alert(sBILL);
+            document.getElementById("bill").value = sBILL;
+
+            let newWIN = window.open();
+            newWIN.document.write("<pre>");
+            newWIN.document.writeln(sBILL);
+
+        }
+    
+    </script>
+</body>
+
+</html>
