@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator</title>
+</head>
+
+<body>
+    <h2>Navigator Demo</h2>
+    <hr>
+    <button id="btCLICK">Click</button>
+    <div id="info"></div>
+
+    <script>
+        document.getElementById("btCLICK").onclick = function () {
+            let s = [];
+            s.push(`appName: ${navigator.appName}`);
+            s.push(`navigator.appVersion: ${navigator.appVersion}`);
+            s.push(`navigator.platform: ${navigator.platform}`);
+            s.push(`navigator.language: ${navigator.language}`);
+            s.push(`navigator.userAgent: ${navigator.userAgent}`);
+            document.getElementById("info").innerHTML = s.join("<br>");
+        }
+    </script>
+</body>
+
+</html>
