@@ -26,17 +26,24 @@
             let user = document.getElementById("user").value;
             let password = document.getElementById("password").value;
 
-            if (user == "binh" && password == "123") {
-                //day la tai khoan hop le: luu vo bien sessionstorage
-                sessionStorage.setItem("uid", user);
-                sessionStorage.setItem("pwd", password);
-                return true; //chuyen den trang action [d09_canvas.html]                
+            let account = localStorage.getItem("account");
+            let a = JSON.parse(account);
+            
+            for (var i = 0; i < a.length; i++) {
+
+                if (a[i].uid == user && a[i].pwd == password) {
+                    //day la tai khoan hop le: luu vo bien sessionstorage
+                    sessionStorage.setItem("uid", user);
+                    sessionStorage.setItem("pwd", password);
+                    return true; //chuyen den trang action [d09_canvas.html]                
+                }
             }
-            else {
-                alert("Tai khoan dang nhap ko hop le !");
-                document.getElementById("user").focus();
-                return false; //vo hieu hoa viec chuyen trang !
-            }
+
+            alert("Tai khoan dang nhap ko hop le !");
+            document.getElementById("user").focus();
+            return false; //vo hieu hoa viec chuyen trang !
+
+
         }
 
 
