@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        canvas {
+            border: brown solid;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Canvas Demo</h2>
+    <div id="welcome"> </div>
+    <hr>
+    <canvas id="khungve" width="500px" height="400px">
+        hello, i.m canvas
+    </canvas>
+
+    <script>
+        window.onload = function () {
+            displayName();
+            drawCanvas();
+        }
+
+        function displayName() {
+            if (sessionStorage.getItem("uid") != null) {
+                let user = sessionStorage.getItem("uid");
+                let welcome = `welcome Mr/Mrs <b>${user}</b> !`;
+                document.getElementById("welcome").innerHTML = welcome;
+            }
+            else {
+                //chua dang nhap -> chuyen ve trang logib 
+                location.href="d09_sessionStorage.html";
+            }
+        }
+
+
+
+        function drawCanvas() {
+            var c = document.getElementById("khungve");
+            var ctx = c.getContext("2d");
+
+            ctx.beginPath();
+
+            //ve duong thang, mau do
+            // ctx.strokeStyle = "red";
+            // ctx.lineCap = "round";
+            // ctx.lineWidth = 1;
+            // ctx.moveTo(20, 20);
+            // ctx.lineTo(150, 20);
+            // ctx.stroke();
+
+            // //ve 1 hinh vuong
+            // ctx.rect(20, 40, 100, 100);
+            // ctx.stroke();
+
+            //ve hinh vuong va to mau
+            ctx.fillStyle = "yellow";
+            ctx.fillRect(20, 20, 110, 110);
+
+
+
+            ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+            ctx.moveTo(110, 75);
+            ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+            ctx.moveTo(65, 65);
+            ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+            ctx.moveTo(95, 65);
+            ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+            ctx.stroke();
+
+
+            // ve chu
+            ctx.font = "20px Georgia";
+            ctx.strokeText("Hello World!", 10, 160);
+
+            ctx.font = "30px Verdana";
+            // Create gradient
+
+            var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+            gradient.addColorStop("0", "magenta");
+            gradient.addColorStop("0.5", "blue");
+            gradient.addColorStop("1.0", "red");
+
+            // Fill with gradient
+            ctx.strokeStyle = gradient;
+            ctx.strokeText("Big smile!", 10, 190);
+        }
+    </script>
+</body>
+
+</html>

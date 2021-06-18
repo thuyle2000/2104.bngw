@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session-storage</title>
+</head>
+<body>
+    <h2>SessionStorage Demo</h2>
+    <hr>
+    <form action="d09_canvas.html" method="GET" id="formLOGIN">
+        <label for="">Username  </label> <br>
+        <input type="text" name="user" id="user" required value="binh"> <br> <br>
+
+        <label for="">Password</label> <br>
+        <input type="password" name="password" id="password" required value="123"> <br> <br>
+
+        <input type="submit" value="Submit"> <input type="reset" value="Reset">
+    </form>
+
+    <script>
+        document.getElementById("formLOGIN").onsubmit=function(){
+            let user = document.getElementById("user").value;
+            let password = document.getElementById("password").value;
+
+            if(user=="binh" && password=="123"){
+                //day la tai khoan hop le: luu vo bien sessionstorage
+                sessionStorage.setItem("uid", user);
+                sessionStorage.setItem("pwd",password);
+                return true; //chuyen den trang action [d09_canvas.html]
+            }
+            else{
+                alert("Tai khoan dang nhap ko hop le !");
+                document.getElementById("user").focus();
+                return false; //vo hieu hoa viec chuyen trang !
+            }
+
+        }
+    </script>
+</body>
+</html>
