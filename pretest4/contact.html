@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        h2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: red;
+        }
+
+        .form {
+            width: 50%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .required {
+            border-bottom: solid blue medium;
+            border-top: solid gainsboro thin;
+            border-left: solid gainsboro thin;
+            border-right: solid gainsboro thin;
+        }
+
+        span {
+            color: red;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: royalblue;
+            color: seashell;
+            border-radius: 15px;
+            font-size: 1.05rem;
+            padding: .3rem 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="images/logo.jpg" alt="logo"> Amazing Bridges
+        </header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="">World Bridges</a>
+            <a href="">Top Longest</a>
+            <a href="">Top Highest</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <section>
+            <h2>Contact us</h2>
+            <div class="form">
+                <form action="" name="formContact" id="formContact">
+                    <fieldset>
+                        <legend>You detail</legend>
+                        <label for="">Name</label>
+                        <input type="text" name="name" id="name" required class="required" pattern="[a-z A-Z]{3,}">
+                        <span>*</span> <br> <br>
+                        <label for="">Email</label>
+                        <input type="text" name="email" id="email" required
+                            class="required"> <span>*</span> <br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>You Review:</legend>
+                        <label for="">How did you hear about us ? </label>
+                        <select name="about" id="about">
+                            <option value="Google">Google</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Advert">Advert</option>
+                            <option value="Other">Other</option>
+                        </select> <br> <br>
+                        Would you visit again ?
+                        <input type="radio" name="visit" id="visit_1" value="Yes" checked> Yes
+                        <input type="radio" name="visit" id="visit_2" value="No"> No
+                        <input type="radio" name="visit" id="visit_3" value="Maybe"> Maybe
+                        <br> <br>
+                        Comments: <br>
+                        <textarea name="comment" id="comment" cols="30" rows="5"></textarea> <br> <br>
+                        <input type="checkbox" name="signup" id="signup" value="yes" checked>
+                        Sign me up for email
+                    </fieldset>
+
+                    <br>
+                    <input type="submit" value="Submit review">
+                    <input type="reset" value="Reset">
+
+
+                </form>
+            </div>
+        </section>
+        <footer>
+            Copyright &copy; by ABC Team, April 2020
+        </footer>
+
+    </div>
+
+
+
+    <script>
+        document.getElementById("formContact").onsubmit = function (e) {
+            e.preventDefault(); // vo hieu hoa viec chuyen trang action.
+
+            let email = document.getElementById("email").value;
+            let re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+            if (re.test(email)==false){
+                alert("Email Ko Hop le !!!");
+                document.getElementById("email").focus();
+                return;
+            }
+
+            alert("Thank you !");
+
+        }
+    </script>
+</body>
+
+</html>

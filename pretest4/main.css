@@ -1,0 +1,28 @@
+header{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    text-shadow: 3px 3px 3px gray;
+}
+nav{
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+a{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .5rem 1rem;
+}     
+footer{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
