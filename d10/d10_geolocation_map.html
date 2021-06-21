@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geolocation-map</title>
+</head>
+
+<body>
+    <h2>Geolocation Map demo</h2>
+    <hr>
+
+    <div id="googleMap" style="width:80%;height:400px;">
+
+    </div>
+
+
+    <script>
+        var lat = 0;
+        var long = 0;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+
+        function showPosition(position) {
+            lat = position.coords.latitude;
+            long = position.coords.longitude;
+        }
+    </script>
+
+
+    <script>
+        function myMap() {
+            // var lat = 10.8;     // vi do (51.508742)
+            // var long = 106.68;  // kinh do (-0.120850)
+            var mapProp = {
+                center: new google.maps.LatLng(lat, long),
+                zoom: 16,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnpBJ
+        rmaLXge_Lp8y4W_yPVjWmoYttuKQ&callback=myMap"></script>
+
+
+</body>
+
+</html>
