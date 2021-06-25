@@ -31,6 +31,14 @@
                 alert("Hello !");
             });
 
+            $(".panel-title").hover(
+                function(){
+                    $(this).css('color','blue');
+                },
+                function(){
+                    $(this).css('color','red');
+                }
+            );
 
         } );
     </script>
