@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax-get</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        td>img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Danh sach Sinh Vien</h2>
+        <hr>
+        <button class="btn btn-warning">Load</button>
+        <div id="dssv"></div>
+
+    </div>
+    <script>
+        jQuery(function ($) {
+            $("button").on("click", function () {
+                $.get("data.json", function (data) {
+                    console.log(data);
+
+                    let s = `<table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>name</th>
+                                        <th>email</th>
+                                        <th>avatar</th>
+                                    </tr>
+                                </thead> 
+                                <tbody> `;
+
+
+
+                    $.each(data, function (i, value) {
+                        if (value.active) {
+                            s += `<tr><td> ${value.id}</td>
+                                <td> ${value.name} </td>
+                                <td> ${value.mail} </td>
+                                <td> <img src="../images/${value.pic}"/>" </td> </tr>`;
+                        }
+                    });
+
+
+                    s += `</tbody></table>`;
+
+
+                    $("#dssv").html(s);
+
+                });
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
