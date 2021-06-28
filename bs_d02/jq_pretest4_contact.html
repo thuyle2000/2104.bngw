@@ -51,14 +51,16 @@
                                 <div class="form-group">
                                     <label for="input" class="col-sm-3 control-label">Name</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="name" id="name" class="form-control" required>
+                                        <input type="text" name="name" id="name" value="xuan binh"
+                                        class="form-control" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="input" class="col-sm-3 control-label">Email</label>
                                     <div class="col-sm-9">
-                                        <input type="email" name="email" id="email" class="form-control" required>
+                                        <input type="email" name="email" id="email" value="binh@gmail.com"
+                                        class="form-control" required>
                                     </div>
                                 </div>
 
@@ -72,10 +74,10 @@
                                     </label>
                                     <div class="col-sm-6">
                                         <select name="about" id="about" class="form-control" required>
-                                            <option value="Google">Google</option>
-                                            <option value="Friend">Friend</option>
-                                            <option value="Advert">Advert</option>
-                                            <option value="Other">Other</option>
+                                            <option value="Google">Search Google </option>
+                                            <option value="Friend">Friends </option>
+                                            <option value="Advert">Advertisement </option>
+                                            <option value="Other">Others </option>
                                         </select>
                                     </div>
                                 </div>
@@ -86,15 +88,15 @@
 
                                     <div class="col-sm-6 radio">
                                         <label>
-                                            <input type="radio" name="visit" id="visit_1" value="Yes" checked="checked">
+                                            <input type="radio" name="visit" id="visit" value="Yes" checked="checked">
                                             Yes
                                         </label>
                                         <label>
-                                            <input type="radio" name="visit" id="visit_2" value="No">
+                                            <input type="radio" name="visit" id="visit" value="No">
                                             No
                                         </label>
                                         <label>
-                                            <input type="radio" name="visit" id="visit_3" value="Maybe">
+                                            <input type="radio" name="visit" id="visit" value="Maybe">
                                             Maybe
                                         </label>
                                     </div>
@@ -103,9 +105,30 @@
 
 
                                 <div class="form-group">
+                                    <label for="input" class="col-sm-6 control-label">Would you like contact by ? </label>
+
+                                    <div class="col-sm-6 checkbox">
+                                        <label>
+                                            <input type="checkbox" name="contact" id="contact" value="mail" checked="checked">
+                                            Mail
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="contact" id="contact" value="phone" checked="checked">
+                                            Phone
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="contact" id="contact" value="sms" >
+                                            SMS
+                                        </label>                                        
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
                                     <label class="col-sm-3 control-label">Comments</label>
                                     <div class="col-sm-9">
-                                        <textarea name="comments" id="comments" class="form-control" rows="4" readonly
+                                        <textarea name="comments" id="comments" class="form-control" rows="5" readonly
                                         ></textarea>
                                     </div>
                                 </div>
@@ -135,7 +158,7 @@
             $("#form-contact").submit(function (e) {
                 e.preventDefault(); // vo hieu hoa viec chuyen trang action.
 
-                let name = $("#name").val().trim();
+                let name = $("#name").val().trim();                
                 let re = /^[a-z ]{3,}$/ig
                 if(re.test(name)==false){
                     alert("Ten ko hop le !");
@@ -153,8 +176,13 @@
                     return false;
                 }
 
+                let about= $("#about option:selected").text();
+
+                let visit = $("#visit:checked").val();
+
+                let contact = $('#contact:checked').serializeArray().map(i=>i.value);
                 
-                let s = ` Ten: ${name} \n Mail: ${email}`;
+                let s = ` Name: ${name} \n Mail: ${email} \n Hear about: ${about} \n Visit again: ${visit} \n Contact by : ${contact}`;
                 $("#comments").val(s);
 
 
