@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>JSON DEMO</h2>
+        <hr>
+        <button class="btn btn-danger">CLICK</button>
+        <div id="ds"></div>
+    </div>
+
+    <script>
+        jQuery(function($){
+            //tao 1 bien doi tuong json, luu thong tin sinh vien
+            let student = { "id":"ST100", "name":"Dang Ngoc Minh Triet", "mark":70};
+
+            //in thong tin sinh ra khoi div khi user click button
+            $("button").click(function(){
+                let s= `id = ${student.id}, ho ten = ${student.name}, diem KQ = ${student.mark}`;
+
+                // $("#ds").html(s);
+
+                let s2 = JSON.stringify(student);
+                $("#ds").html(s2);
+                
+            });
+
+        });
+    </script>
+</body>
+</html>

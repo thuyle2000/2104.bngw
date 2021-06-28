@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        div.row img{
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>JSON ARRAY DEMO</h2>
+        <hr>
+        <div class="row">
+        </div>
+    </div>
+
+    <script>
+        jQuery(function ($) {
+            let a = [
+                { "id": "1", "name": "red rose", "pic": "rose1.png", "price": 120 },
+                { "id": "2", "name": "yellow rose", "pic": "rose2.png", "price": 140 },
+                { "id": "3", "name": "blue rose", "pic": "rose3.png", "price": 150 },
+                { "id": "4", "name": "orange rose", "pic": "rose4.png", "price": 100 }
+            ];
+
+            let s = ``;
+            $.each(a, function (i, value) {
+                s += `<div class='col-md-6'>  ${value.name} , ${value.price} <br><br>
+                <img src="../images/${value.pic}"> </div>`
+            });
+
+            $(".row").html(s);
+        });
+        
+    </script>
+</body>
+
+</html>
