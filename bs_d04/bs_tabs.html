@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+      
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu 1
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a data-toggle="tab" href="#menu11">Submenu 1-1</a></li>
+                      <li><a data-toggle="tab" href="#menu12">Submenu 1-2</a></li>
+                      <li><a href="#">Submenu 1-3</a></li>
+                    </ul>
+                  </li>
+                <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+                <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h2>Home</h2>
+                    <img src="../images/rose1.PNG" alt="" width="auto">
+                </div>
+                <div id="menu11" class="tab-pane fade">
+                    <h2>Menu 11</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse sit, libero mollitia cum iste voluptatem, fuga voluptates impedit, ea reprehenderit ducimus corporis dolorem? Ipsa non a eaque ut, dolore doloremque!</p>
+                </div>
+                <div id="menu12" class="tab-pane fade">
+                    <h2>Menu 12</h2>
+                    <img src="../images/coffee.png" alt="">
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h2>Menu 2</h2>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <H2>Menu 3</H2>
+                </div>
+
+            
+        </div>
+    </div>
+</body>
+
+</html>
