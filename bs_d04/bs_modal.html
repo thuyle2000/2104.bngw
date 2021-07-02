@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Modal Demo</h2>
+        <hr>
+
+        <button class="btn btn-danger" data-target="#abc" data-toggle="modal">Login</button>
+
+        <!-- modal -->
+        <div class="modal fade" id="abc">
+            <div class="modal-dialog modal-sm">
+
+                <!-- content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Sign in</h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label class="control-label">Username</label>
+                                <input type="text" name="user" id="user" class="form-control" value="xuanbinh" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Password</label>
+                                <input type="password" name="pass" id="pass" class="form-control" value="123" required>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                                <button type="reset" class="btn btn-info">Reset</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-success" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
