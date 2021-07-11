@@ -51,8 +51,8 @@
                                 <div class="form-group">
                                     <label for="input" class="col-sm-3 control-label">Name</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="name" id="name" value="xuan binh"
-                                        class="form-control" required>
+                                        <input type="text" name="name" id="name" value="xuan binh" class="form-control"
+                                            required>
                                     </div>
                                 </div>
 
@@ -60,7 +60,7 @@
                                     <label for="input" class="col-sm-3 control-label">Email</label>
                                     <div class="col-sm-9">
                                         <input type="email" name="email" id="email" value="binh@gmail.com"
-                                        class="form-control" required>
+                                            class="form-control" required>
                                     </div>
                                 </div>
 
@@ -105,21 +105,24 @@
 
 
                                 <div class="form-group">
-                                    <label for="input" class="col-sm-6 control-label">Would you like contact by ? </label>
+                                    <label for="input" class="col-sm-6 control-label">Would you like contact by ?
+                                    </label>
 
                                     <div class="col-sm-6 checkbox">
                                         <label>
-                                            <input type="checkbox" name="contact" id="contact" value="mail" checked="checked">
+                                            <input type="checkbox" name="contact" id="contact" value="mail"
+                                                checked="checked">
                                             Mail
                                         </label>
                                         <label>
-                                            <input type="checkbox" name="contact" id="contact" value="phone" checked="checked">
+                                            <input type="checkbox" name="contact" id="contact" value="phone"
+                                                checked="checked">
                                             Phone
                                         </label>
                                         <label>
-                                            <input type="checkbox" name="contact" id="contact" value="sms" >
+                                            <input type="checkbox" name="contact" id="contact" value="sms">
                                             SMS
-                                        </label>                                        
+                                        </label>
                                     </div>
 
                                 </div>
@@ -128,8 +131,8 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Comments</label>
                                     <div class="col-sm-9">
-                                        <textarea name="comments" id="comments" class="form-control" rows="5" readonly
-                                        ></textarea>
+                                        <textarea name="comments" id="comments" class="form-control" rows="5"
+                                            readonly></textarea>
                                     </div>
                                 </div>
 
@@ -158,9 +161,9 @@
             $("#form-contact").submit(function (e) {
                 e.preventDefault(); // vo hieu hoa viec chuyen trang action.
 
-                let name = $("#name").val().trim();                
+                let name = $("#name").val().trim();
                 let re = /^[a-z ]{3,}$/ig
-                if(re.test(name)==false){
+                if (re.test(name) == false) {
                     alert("Ten ko hop le !");
                     $("#name").focus();
                     return false;
@@ -176,15 +179,22 @@
                     return false;
                 }
 
-                let about= $("#about option:selected").text();
+                let about = $("#about option:selected").text();
 
                 let visit = $("#visit:checked").val();
 
-                let contact = $('#contact:checked').serializeArray().map(i=>i.value);
-                
-                let s = ` Name: ${name} \n Mail: ${email} \n Hear about: ${about} \n Visit again: ${visit} \n Contact by : ${contact}`;
-                $("#comments").val(s);
+                let contact = $('#contact:checked').serializeArray().map(i => i.value);
 
+                let s = ` Name: ${name} \n Mail: ${email} \n Hear about: ${about} \n Visit again: ${visit} \n Contact by : ${contact}`;
+
+                $("#comments").val(s); // 1. xuat thong tin dang ky vo o [comment]
+                alert(s);              // 2. xuat thong tin dang ky ra hop thong bao alert
+
+                // 3. xuat thong tin dang ky ra tab moi trong trinh duyet
+                let newTab = window.open();
+                newTab.document.writeln("<pre>");
+                newTab.document.writeln(s);
+                newTab.document.writeln("<pre>");
 
             });
 
