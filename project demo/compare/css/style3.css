@@ -1,0 +1,182 @@
+/* w3-css */
+.w3-light-grey{color:#000!important;background-color:#f1f1f1!important}
+
+.w3-btn:disabled,.w3-btn-floating:disabled{cursor:not-allowed;opacity:0.3}
+.w3-btn *,.w3-btn-floating *,.w3-btn:disabled *,.w3-btn-floating:disabled *{pointer-events:none}
+.w3-btn:hover,.w3-btn:disabled:hover,.w3-btn-floating:hover,.w3-btn-floating:disabled:hover{box-shadow:none}
+.w3-btn:hover,.w3-btn-floating:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+
+.w3-btn,.w3-btn-floating{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.w3-btn-floating{display:inline-block;text-align:center;color:#fff;background-color:#000;position:relative;overflow:hidden;z-index:1;padding:0;border-radius:50%;cursor:pointer;font-size:24px}
+.w3-btn-floating{width:40px;height:40px;line-height:40px}
+
+.w3-center{text-align:center!important}
+
+.w3-card-4{box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important}
+
+.w3-round-large{border-radius:8px!important}
+
+.w3-border{border:1px solid #ccc!important}
+.w3-margin-top{margin-top:16px!important}
+.w3-margin-bottom{margin-bottom:16px!important}
+
+.w3-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+
+
+.w3-animate-zoom {-webkit-animation:animatezoom 0.6s;animation:animatezoom 0.6s}
+@-webkit-keyframes animatezoom{from{-webkit-transform:scale(0)} to{-webkit-transform:scale(1)}}
+@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+
+.w3-white{color:#000!important;background-color:#fff!important}
+
+.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+
+.w3-closebtn{
+    text-decoration:none;float:right;font-size:24px;font-weight:bold;
+    -webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s;
+    transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s;
+}
+
+.w3-closebtn:hover,.w3-closebtn:focus{color:#000;text-decoration:none;cursor:pointer}
+
+/* end of w3-css */
+
+
+
+
+
+
+/*style of style-css*/
+.addButtonCircular
+{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+a{background-color:transparent}
+a:active,a:hover{outline:0; text-decoration:none;}
+    
+
+/* .imgFill{
+    width: 50%;
+} */
+
+.comparePanle{
+    position: fixed;
+    bottom: 10px;
+    width:90%;
+    left:50%;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.titleMargin{
+    padding: 4px 0px 4px 4px;
+}
+.titleMargin1{
+    padding: 0px 0px 0px 4px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.modPos{
+    padding-top: 25px !important;
+}
+
+.contentPop{
+    width: 80%;
+    margin-left: 10%;
+    height: 80%;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+
+.product {
+    list-style-type: none;
+    border: 1px solid #B5B4B7;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.product:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.product .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+
+.product li {
+    border-bottom: 1px solid #B5B4B7;
+    padding: 10px;
+    text-align: center;
+}
+
+.product .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+.compHeader{
+    min-height: 200px ;
+}
+
+.compareThumb{
+    height: 150px;
+}
+
+@media only screen and (max-width:600px){
+    li{
+        font-size: 8px;
+    }
+    .comparePanle h4{
+        font-size: 15px;
+    }
+    .compareThumb{
+        height: 100px;
+        
+    }
+    .compHeader{
+    min-height: 150px;
+}
+}
+
+.relPos{
+    position: relative;
+}
+
+.cpu{
+    min-height: 115px ;
+}
+
+.rotateBtn{
+    -webkit-transform : rotate(45deg); 
+    -moz-transform : rotate(45deg); 
+    -ms-transform : rotate(45deg); 
+    -o-transform : rotate(45deg); 
+    transform : rotate(45deg); 
+}
+
+.selected{
+    border-style:solid !important;
+    border-color:#d9d9d9 !important;
+    border-width:thin !important; 
+}
