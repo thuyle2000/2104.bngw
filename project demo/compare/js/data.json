@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Oneplus 6",
+        "id": "p1",
+        "size": "4.9",
+        "weight": " 130 g",
+        "processor": "2.3 GHz, Quad Core, Qualcomm Snapdragon 800",
+        "battery": "2300 mAH",
+        "image":"p1.jpg"
+    },
+    {
+        "title": "Motorola Moto",
+        "id": "p2",
+        "size": "5.2",
+        "weight": " 136 g",
+        "processor": "1.44 GHz, Quad Core, Qualcomm Snapdragon 808",
+        "battery": "2700 mAH",
+        "image":"p2.jpg"
+    },
+    {
+        "title": " LG Q6",
+        "id": "p3",
+        "size": "6",
+        "weight": " 184 g",
+        "processor": " 2.7 GHz, Quad Core, Qualcomm Snapdragon 805",
+        "battery": " 3220 mAH",
+        "image":"p3.jpg"
+    },
+    {
+        "title": "Honor 8 Pro",
+        "id": "p4",
+        "size": "5.7",
+        "weight": " 178 g",
+        "processor": "1.55 GHz, Octa Core, Qualcomm Snapdragon 810 ",
+        "battery": "3450 mAH",
+        "image":"p4.jpg"
+    },
+    {
+        "title": " LG Q6 plus",
+        "id": "p5",
+        "size": "6",
+        "weight": " 184 g",
+        "processor": " 2.7 GHz, Quad Core, Qualcomm Snapdragon 805",
+        "battery": " 3220 mAH",
+        "image":"p3.jpg"
+    },
+    {
+        "title": "Honor 8 Pro plus",
+        "id": "p6",
+        "size": "5.7",
+        "weight": " 178 g",
+        "processor": "1.55 GHz, Octa Core, Qualcomm Snapdragon 810 ",
+        "battery": "3450 mAH",
+        "image":"p4.jpg"
+    }
+]
